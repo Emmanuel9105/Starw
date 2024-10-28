@@ -157,29 +157,22 @@ def nivel5():
           Zordgiano hay que sumar el factorial de M y el factorial de S.''')
     M = randint(5,10)
     S = randint(5,10)
-    i = 1
-    factorial1 = 1
-    while (i <= M):
-        factorial1 = factorial1 * i
-        i = i + 1
-    
-    i = 1
-    factorial2 = 1
-    while (i <= S):
-        factorial2 = factorial2 * i
-        i = i + 1
+    factorial1 = math.factorial(M)
+    factorial2 = math.factorial(S)
     resultado = factorial1 + factorial2
-    
     print("M es: " + str(M))
     print("S es : " + str(S))
     print("¿Qué debe introducir?")
-    operador = int(input("Escribe tu respuesta: "))
-    if operador == resultado:
-        print("Has acertadoo")
-        print("Acceso concedido.")
-    else:
-        print("Acceso denegado")
-        print("La galaxya esta perdida.")
+    try:
+        operador = int(input("Escribe tu respuesta: "))
+        if operador == resultado:
+            print("Has acertadoo")
+            print("Acceso concedido.")
+        else:
+            print("Acceso denegado")
+            print("La galaxya esta perdida.")
+    except ValueError:
+        print("Por favor, introduce un numero")
 
 # comprobar que funcione bien
 nivel5()
