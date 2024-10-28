@@ -145,7 +145,52 @@ def nivel4():
 
 
 
-     
+def nivel5():
+    print('''\n
+          Consiguen entrar al reactor. Ya solo queda que Luke Skywalker\n
+          coloque la bomba, programe el temporizador y salir de allí corriendo.\n
+          Necesita programarlo para que explote en exactamente M minutos y\n
+          S segundos, el tiempo suficiente para escapar antes de que explote\n
+          pero sin que el sistema de seguridad anti-explosivos detecte y\n
+          desactive la bomba. Pero el temporizador utiliza un reloj Zordgiano\n
+          un tanto peculiar. Para convertir los minutos y segundos al sistema\n
+          Zordgiano hay que sumar el factorial de M y el factorial de S.''')
+    M = randint(5,10)
+    S = randint(5,10)
+    i = 1
+    factorial1 = 1
+    while (i <= M):
+        factorial1 = factorial1 * i
+        i = i + 1
+    
+    i = 1
+    factorial2 = 1
+    while (i <= S):
+        factorial2 = factorial2 * i
+        i = i + 1
+    resultado = factorial1 + factorial2
+    
+    print("M es: " + str(M))
+    print("S es : " + str(S))
+    print("¿Qué debe introducir?")
+    operador = int(input("Escribe tu respuesta: "))
+    if operador == resultado:
+        print("Has acertadoo")
+        print("Acceso concedido.")
+    else:
+        print("Acceso denegado")
+        print("La galaxya esta perdida.")
+
+# comprobar que funcione bien
+nivel5()
+
+
+
+
+
+
+
+
 # inicio()
 
 
