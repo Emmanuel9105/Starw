@@ -25,7 +25,8 @@ def sumatorio():
 
 
 def nivel1():
-    print('''Los problemas empiezan cuando deben realizar un salto\n
+    print('''\n
+          Los problemas empiezan cuando deben realizar un salto\n
           hiperespacial hasta al sistema S1 en el sector S2, pero el sistema de\n
           navegación está estropeado y el computador tiene problemas para\n
           calcular parte de las coordenadas de salto. Chewbacca, piloto\n
@@ -85,8 +86,66 @@ def nivel2():
         inicio()
     
 def nivel3():
-    
-         
+    print('''\n
+        Han Solo proporciona el código correcto. Atracan en la estrella de la\n
+          muerte, se equipan con trajes de soldados imperiales que\n
+          encuentran en la nave para pasar desapercibidos y bajan. Ahora\n
+          deben averiguar en qué nivel de los N existentes se encuentra el\n
+          reactor principal. Se dirigen al primer panel computerizado que\n
+          encuentran y la Princesa Leia intenta acceder a los planos de la\n
+          nave pero necesita introducir una clave de acceso. Entonces\n
+          recuerda la información que le proporcionó Lando Calrissian “La\n
+          clave de acceso a los planos de la nave es el factorial de N/10\n
+          (redondeando N hacia abajo), donde N es el nº de niveles”.''')
+    N = randint(50,100)
+    i = 1
+    factorial = 1
+    while (i <= N/10):
+        factorial = factorial * i
+        i = i + 1
+    print("N es: " + str(N))
+    print("¿Qué debe introducir?")
+    operador = int(input("Escribe tu respuesta: "))
+    if operador == factorial:
+        print("Has acertadoo")
+        print("Acceso concedido.")
+    else:
+        print("Acceso denegado")
+        print("La galaxya esta perdida.")
+        
+import math  
+def nivel4():
+    print('''\n
+          Gracias a la inteligencia de Leia llegan al nivel correcto y encuentran\n
+          la puerta acorazada que da al reactor principal. R2D2 se conecta al\n
+          panel de acceso para intentar hackear el sistema y abrir la puerta.\n
+          Para desencriptar la clave, necesita verificar si el número P es primo\n
+          o no. Si es primo introduce un 1, si no lo es introduce un 0''')
+    P = randint(10,100)
+
+    def es_primo(P):
+        if P < 2:
+            return False
+        for i in range(2, int(math.sqrt(P))+1):
+            if  (P % i)== 0:
+                return False
+        return True
+
+    resultado = es_primo(P)
+
+    print("P es: " + str(P))
+    print("¿Qué debe introducir?")
+    operador = int(input("Escribe tu respuesta: "))
+    if operador == resultado:
+        print("Has acertadoo")
+        print("Acceso concedido.")
+    else:
+        print("Acceso denegado")
+        print("La galaxya esta perdida.")
+
+
+
+     
 # inicio()
 
 
